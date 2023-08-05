@@ -1,6 +1,8 @@
 const express=require('express');
 const cors=require('cors');
 const mongoose=require('mongoose');
+require('dotenv').config();
+const PORT=process.env.PORT || 5000;
 
 const app=express();
 app.use(express.json());
@@ -75,6 +77,6 @@ app.post("/register" , async (req,res)=>{
             } 
  })
 
-app.listen('https://login-reg-server.onrender.com',(req,res)=>{
-    console.log("Server started Bro*** ")
+app.listen(PORT,(req,res)=>{
+    console.log("Server started at PORT : " , PORT);
 })
