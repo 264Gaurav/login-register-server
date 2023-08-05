@@ -75,6 +75,6 @@ app.post("/register" , async (req,res)=>{
             } 
  })
 
-app.listen(https://login-reg-server.onrender.com,(req,res)=>{
+app.listen('https://login-reg-server.onrender.com',(req,res)=>{
     console.log("Server started Bro*** ")
 })
