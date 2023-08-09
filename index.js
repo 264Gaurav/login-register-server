@@ -1,8 +1,6 @@
 const express=require('express');
 const cors=require('cors');
 const mongoose=require('mongoose');
-require('dotenv').config();
-const PORT=process.env.PORT || 5000;
 
 const app=express();
 app.use(express.json());
@@ -42,12 +40,12 @@ app.post("/register" , async (req,res)=>{
                     });
             }
             //else the user is a new user 
-    
+
             //create  new entry i.e., signup User 
             const user= User.create({    //DB interaction 
                 name,email,password     //create entry with updated password 
             })
-    
+
             console.log(user);
             return res.status(200).json({
                 status:true,
@@ -55,7 +53,7 @@ app.post("/register" , async (req,res)=>{
             });
  })
 
-    
+
  app.post("/login" , async(req,res)=>{
     //console.log(req.body);
     const {email,password}=req.body;  //extract user data
@@ -77,6 +75,6 @@ app.post("/register" , async (req,res)=>{
             } 
  })
 
-app.listen(PORT,(req,res)=>{
-    console.log("Server started at PORT : " , PORT);
+app.listen(4000,(req,res)=>{
+    console.log("Server started at port : 4000")
 })
